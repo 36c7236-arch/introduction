@@ -3,329 +3,691 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>강지우™ 홈쇼핑 방송</title>
+<title>강지우 홈쇼핑 자기소개</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Arial,sans-serif;
-overflow-x:hidden;
-background:linear-gradient(135deg,#ffd400,#ff8c00,#ff2e2e);
-color:white;
+:root{
+--bg:#0b0b0b;--red:#ff2e2e;--yellow:#ffd400;--green:#39ff14;--white:#fff;
 }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
 body::before{
-content:'';
-position:fixed;
-inset:0;
-background:repeating-linear-gradient(
-0deg,
-rgba(255,255,255,.04) 0px,
-rgba(255,255,255,.04) 2px,
-transparent 2px,
-transparent 4px
-);
+content:"";position:fixed;inset:0;
+background:repeating-linear-gradient(transparent 0 2px,rgba(255,255,255,.03) 2px 4px);
 pointer-events:none;
 }
-
-.marquee{
-background:black;
-color:#ffd400;
-padding:12px;
-font-weight:bold;
-overflow:hidden;
-white-space:nowrap;
-border-bottom:4px solid #ff2e2e;
-}
-
-.marquee span{
-display:inline-block;
-animation:scroll 15s linear infinite;
-}
-
-@keyframes scroll{
-from{transform:translateX(100%)}
-to{transform:translateX(-100%)}
-}
-
+.marquee{background:var(--red);padding:10px;font-weight:bold;white-space:nowrap;overflow:hidden}
+.marquee div{display:inline-block;animation:scroll 18s linear infinite}
+@keyframes scroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+background:radial-gradient(circle,var(--red),#300,#000);
 padding:40px;
-position:relative;
 }
-
-.hero-box{
-background:rgba(0,0,0,.75);
-padding:50px;
-border-radius:25px;
-border:6px solid #ffd400;
-box-shadow:0 0 40px #ff2e2e;
-max-width:900px;
-}
-
-.alert{
-font-size:2rem;
-color:#ffd400;
-animation:blink 1s infinite;
-}
-
-.hero h1{
-font-size:5rem;
-margin:20px 0;
-color:#fff;
-text-shadow:0 0 25px #ffd400;
-}
-
-.hero p{
-font-size:1.5rem;
-line-height:1.8;
-}
-
-.stock{
-margin-top:20px;
-font-size:1.2rem;
-color:#39ff14;
-}
-
-@keyframes blink{
-50%{opacity:.3}
-}
-
-.sale{
-position:absolute;
-top:40px;
-right:40px;
-width:120px;
-height:120px;
-background:#ff2e2e;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
-font-size:1.2rem;
-transform:rotate(-20deg);
-animation:spin 8s linear infinite;
-}
-
-@keyframes spin{
-from{transform:rotate(0deg)}
-to{transform:rotate(360deg)}
-}
-
-.section{
-padding:90px 20px;
-max-width:1200px;
-margin:auto;
-}
-
+.hero h1{font-size:5rem;color:var(--yellow);text-shadow:0 0 20px var(--yellow)}
+.hero p{font-size:1.5rem;margin-top:20px}
+.typing{color:var(--green);font-size:1.3rem;height:40px}
+.section{padding:80px 20px;max-width:1200px;margin:auto}
 .title{
-font-size:3rem;
-text-align:center;
-margin-bottom:40px;
-color:#fff;
-text-shadow:0 0 10px black;
+font-size:3rem;color:var(--yellow);margin-bottom:30px;text-align:center
 }
-
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px
 }
-
 .card{
-background:rgba(0,0,0,.75);
-border:4px solid #ffd400;
-border-radius:20px;
-padding:25px;
-transition:.3s;
+background:#111;border:2px solid var(--red);padding:20px;border-radius:20px;
+box-shadow:0 0 20px rgba(255,46,46,.3);transition:.3s
 }
-
-.card:hover{
-transform:translateY(-10px) scale(1.04);
-box-shadow:0 0 25px #ffd400;
-}
-
-.card h3{
-margin-bottom:15px;
-color:#ffd400;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.bar{
-height:25px;
-background:#222;
-border-radius:30px;
-overflow:hidden;
-margin-top:8px;
-}
-
-.fill{
-height:100%;
-background:linear-gradient(90deg,#ff2e2e,#ffd400);
-}
-
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 30px var(--yellow)}
+.skillbar{height:20px;background:#333;border-radius:30px;overflow:hidden;margin-top:10px}
+.fill{height:100%;background:linear-gradient(90deg,var(--red),var(--yellow))}
 .quote{
-padding:120px 20px;
-text-align:center;
-background:black;
+text-align:center;padding:80px 20px;font-size:3rem;color:var(--yellow);
+text-shadow:0 0 20px var(--yellow);animation:blink 1.5s infinite
 }
-
-.quote h2{
-font-size:4rem;
-color:#ffd400;
-animation:blink 1.2s infinite;
-}
-
-.quote p{
-font-size:1.5rem;
-margin-top:20px;
-}
-
-footer{
-background:black;
-padding:30px;
-text-align:center;
-}
-
-.hidden{
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-}
-
-.show{
-opacity:1;
-transform:none;
+@keyframes blink{50%{opacity:.4}}
+footer{text-align:center;padding:30px;background:#111}
+.hidden{opacity:0;transform:translateY(40px);transition:1s}
+.show{opacity:1;transform:none}
+@media(max-width:768px){
+.hero h1{font-size:3rem}
+.quote{font-size:2rem}
 }
 </style>
 </head>
 <body>
 
-<div class="marquee">
-<span>
-🚨 긴급편성 🚨 강지우™ 재고 단 1개 · 발표력 탑재 · 추진력 탑재 · 추가 생산 불가능 · 폭탄특가 방송중 🚨
-</span>
-</div>
+<div class="marquee"><div>🚨 긴급속보 🚨 강지우 한정수량 입고! 미래형 인간! 발표 장인! LP 수집가! 마감임박! 폭탄세일!</div></div>
 
 <section class="hero">
-<div class="sale">SALE</div>
-
-<div class="hero-box">
-<div class="alert">🔥 전국민 충격 🔥</div>
-
-<h1>[ 강지우™ ]</h1>
-
-<p>
-대한민국에 단 한 명!<br>
-발표력과 추진력을 동시에 탑재한 인재
-</p>
-
-<div class="stock">
-재고 : 1개<br>
-추가 생산 : 불가능
-</div>
+<div>
+<h1>강지우™</h1>
+<p>지금 아니면 못 만나는 초특가 인재</p>
+<div class="typing"></div>
 </div>
 </section>
 
 <section class="section hidden">
-<h2 class="title">📦 제품 설명서</h2>
+<h2 class="title">📦 제품 스펙</h2>
 <div class="grid">
-<div class="card">
-<h3>제품명</h3>
-강지우™ Premium Edition
-</div>
-
-<div class="card">
-<h3>주요 기능</h3>
-✔ 발표하기<br>
-✔ 밝은 에너지<br>
-✔ 추진력
-</div>
-
-<div class="card">
-<h3>주의사항</h3>
-✔ 가끔 미루기<br>
-✔ 야구 경기 시 집중력 상승
-</div>
-
-<div class="card">
-<h3>최종 목표</h3>
-선한 영향력을 주며 돈도 많이 버는 사람
-</div>
+<div class="card"><h3>이름</h3><p>강지우</p></div>
+<div class="card"><h3>캐치프레이즈</h3><p>모든건 기세</p></div>
+<div class="card"><h3>성격</h3><p>밝음</p></div>
+<div class="card"><h3>목표</h3><p>선한 영향력을 주며 돈도 많이 버는 사람</p></div>
 </div>
 </section>
 
 <section class="section hidden">
-<h2 class="title">⚾ 탑재 모듈</h2>
-
+<h2 class="title">🔥 관심 분야</h2>
 <div class="grid">
-<div class="card">⚾ 야구 관람 패키지</div>
-<div class="card">📷 빈티지 카메라 컬렉터 에디션</div>
-<div class="card">🎵 LP 수집 모듈</div>
-<div class="card">🍜 우동이 관심 시스템</div>
+<div class="card">🍜 우동이</div>
+<div class="card">⚾ 야구 보기</div>
+<div class="card">📷 빈티지 카메라</div>
+<div class="card">🎵 LP 모으기</div>
 </div>
 </section>
 
 <section class="section hidden">
-<h2 class="title">📈 품질 검사 결과</h2>
+<h2 class="title">📈 스킬 분석</h2>
+<div class="card">발표하기<div class="skillbar"><div class="fill" style="width:95%"></div></div></div>
+<br>
+<div class="card">미루기<div class="skillbar"><div class="fill" style="width:99%"></div></div></div>
+</section>
 
-<div class="card skill">
-발표력 95%
-<div class="bar"><div class="fill" style="width:95%"></div></div>
-</div>
-
-<div class="card skill">
-미루기 99%
-<div class="bar"><div class="fill" style="width:99%"></div></div>
-</div>
-
-<div class="card skill">
-추진력 90%
-<div class="bar"><div class="fill" style="width:90%"></div></div>
+<section class="section hidden">
+<h2 class="title">⭐ 좋아하는 것</h2>
+<div class="grid">
+<div class="card">⚾ 야구</div>
+<div class="card">👥 친구와 놀기</div>
+<div class="card">📷 카메라</div>
+<div class="card">🎶 LP</div>
 </div>
 </section>
 
 <section class="section hidden">
-<h2 class="title">🚄 미래 투자 전망</h2>
-
+<h2 class="title">🚄 미래 계획</h2>
 <div class="grid">
 <div class="card">횡단열차 타보기</div>
 <div class="card">제주도 1달 살기</div>
-<div class="card">다른 사람에게 선한 영향력 주기</div>
 </div>
 </section>
 
 <section class="quote">
-<h2>모든건 기세™</h2>
-<p>
-성공도 기세<br>
-도전도 기세<br>
-인생도 기세<br><br>
-강지우가 증명합니다.
-</p>
+“모든건 기세”
 </section>
 
 <footer>
-📺 KANG JIWOO TV SHOPPING NETWORK
+2026 TV SHOPPING PROFILE OF KANG JIWOO
 </footer>
 
 <script>
+const text="📺 방송 시작! 오늘 소개할 상품은 강지우입니다!";
+let i=0;
+function type(){
+if(i<text.length){
+document.querySelector(".typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,80);
+}
+}
+type();
+
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
+if(entry.isIntersecting) entry.target.classList.add("show");
 });
 });
-
-document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 </script>
 
 </body>
 </html>
+
+<!-- RETRO-TV-COMMENT-1 -->
+<!-- RETRO-TV-COMMENT-2 -->
+<!-- RETRO-TV-COMMENT-3 -->
+<!-- RETRO-TV-COMMENT-4 -->
+<!-- RETRO-TV-COMMENT-5 -->
+<!-- RETRO-TV-COMMENT-6 -->
+<!-- RETRO-TV-COMMENT-7 -->
+<!-- RETRO-TV-COMMENT-8 -->
+<!-- RETRO-TV-COMMENT-9 -->
+<!-- RETRO-TV-COMMENT-10 -->
+<!-- RETRO-TV-COMMENT-11 -->
+<!-- RETRO-TV-COMMENT-12 -->
+<!-- RETRO-TV-COMMENT-13 -->
+<!-- RETRO-TV-COMMENT-14 -->
+<!-- RETRO-TV-COMMENT-15 -->
+<!-- RETRO-TV-COMMENT-16 -->
+<!-- RETRO-TV-COMMENT-17 -->
+<!-- RETRO-TV-COMMENT-18 -->
+<!-- RETRO-TV-COMMENT-19 -->
+<!-- RETRO-TV-COMMENT-20 -->
+<!-- RETRO-TV-COMMENT-21 -->
+<!-- RETRO-TV-COMMENT-22 -->
+<!-- RETRO-TV-COMMENT-23 -->
+<!-- RETRO-TV-COMMENT-24 -->
+<!-- RETRO-TV-COMMENT-25 -->
+<!-- RETRO-TV-COMMENT-26 -->
+<!-- RETRO-TV-COMMENT-27 -->
+<!-- RETRO-TV-COMMENT-28 -->
+<!-- RETRO-TV-COMMENT-29 -->
+<!-- RETRO-TV-COMMENT-30 -->
+<!-- RETRO-TV-COMMENT-31 -->
+<!-- RETRO-TV-COMMENT-32 -->
+<!-- RETRO-TV-COMMENT-33 -->
+<!-- RETRO-TV-COMMENT-34 -->
+<!-- RETRO-TV-COMMENT-35 -->
+<!-- RETRO-TV-COMMENT-36 -->
+<!-- RETRO-TV-COMMENT-37 -->
+<!-- RETRO-TV-COMMENT-38 -->
+<!-- RETRO-TV-COMMENT-39 -->
+<!-- RETRO-TV-COMMENT-40 -->
+<!-- RETRO-TV-COMMENT-41 -->
+<!-- RETRO-TV-COMMENT-42 -->
+<!-- RETRO-TV-COMMENT-43 -->
+<!-- RETRO-TV-COMMENT-44 -->
+<!-- RETRO-TV-COMMENT-45 -->
+<!-- RETRO-TV-COMMENT-46 -->
+<!-- RETRO-TV-COMMENT-47 -->
+<!-- RETRO-TV-COMMENT-48 -->
+<!-- RETRO-TV-COMMENT-49 -->
+<!-- RETRO-TV-COMMENT-50 -->
+<!-- RETRO-TV-COMMENT-51 -->
+<!-- RETRO-TV-COMMENT-52 -->
+<!-- RETRO-TV-COMMENT-53 -->
+<!-- RETRO-TV-COMMENT-54 -->
+<!-- RETRO-TV-COMMENT-55 -->
+<!-- RETRO-TV-COMMENT-56 -->
+<!-- RETRO-TV-COMMENT-57 -->
+<!-- RETRO-TV-COMMENT-58 -->
+<!-- RETRO-TV-COMMENT-59 -->
+<!-- RETRO-TV-COMMENT-60 -->
+<!-- RETRO-TV-COMMENT-61 -->
+<!-- RETRO-TV-COMMENT-62 -->
+<!-- RETRO-TV-COMMENT-63 -->
+<!-- RETRO-TV-COMMENT-64 -->
+<!-- RETRO-TV-COMMENT-65 -->
+<!-- RETRO-TV-COMMENT-66 -->
+<!-- RETRO-TV-COMMENT-67 -->
+<!-- RETRO-TV-COMMENT-68 -->
+<!-- RETRO-TV-COMMENT-69 -->
+<!-- RETRO-TV-COMMENT-70 -->
+<!-- RETRO-TV-COMMENT-71 -->
+<!-- RETRO-TV-COMMENT-72 -->
+<!-- RETRO-TV-COMMENT-73 -->
+<!-- RETRO-TV-COMMENT-74 -->
+<!-- RETRO-TV-COMMENT-75 -->
+<!-- RETRO-TV-COMMENT-76 -->
+<!-- RETRO-TV-COMMENT-77 -->
+<!-- RETRO-TV-COMMENT-78 -->
+<!-- RETRO-TV-COMMENT-79 -->
+<!-- RETRO-TV-COMMENT-80 -->
+<!-- RETRO-TV-COMMENT-81 -->
+<!-- RETRO-TV-COMMENT-82 -->
+<!-- RETRO-TV-COMMENT-83 -->
+<!-- RETRO-TV-COMMENT-84 -->
+<!-- RETRO-TV-COMMENT-85 -->
+<!-- RETRO-TV-COMMENT-86 -->
+<!-- RETRO-TV-COMMENT-87 -->
+<!-- RETRO-TV-COMMENT-88 -->
+<!-- RETRO-TV-COMMENT-89 -->
+<!-- RETRO-TV-COMMENT-90 -->
+<!-- RETRO-TV-COMMENT-91 -->
+<!-- RETRO-TV-COMMENT-92 -->
+<!-- RETRO-TV-COMMENT-93 -->
+<!-- RETRO-TV-COMMENT-94 -->
+<!-- RETRO-TV-COMMENT-95 -->
+<!-- RETRO-TV-COMMENT-96 -->
+<!-- RETRO-TV-COMMENT-97 -->
+<!-- RETRO-TV-COMMENT-98 -->
+<!-- RETRO-TV-COMMENT-99 -->
+<!-- RETRO-TV-COMMENT-100 -->
+<!-- RETRO-TV-COMMENT-101 -->
+<!-- RETRO-TV-COMMENT-102 -->
+<!-- RETRO-TV-COMMENT-103 -->
+<!-- RETRO-TV-COMMENT-104 -->
+<!-- RETRO-TV-COMMENT-105 -->
+<!-- RETRO-TV-COMMENT-106 -->
+<!-- RETRO-TV-COMMENT-107 -->
+<!-- RETRO-TV-COMMENT-108 -->
+<!-- RETRO-TV-COMMENT-109 -->
+<!-- RETRO-TV-COMMENT-110 -->
+<!-- RETRO-TV-COMMENT-111 -->
+<!-- RETRO-TV-COMMENT-112 -->
+<!-- RETRO-TV-COMMENT-113 -->
+<!-- RETRO-TV-COMMENT-114 -->
+<!-- RETRO-TV-COMMENT-115 -->
+<!-- RETRO-TV-COMMENT-116 -->
+<!-- RETRO-TV-COMMENT-117 -->
+<!-- RETRO-TV-COMMENT-118 -->
+<!-- RETRO-TV-COMMENT-119 -->
+<!-- RETRO-TV-COMMENT-120 -->
+<!-- RETRO-TV-COMMENT-121 -->
+<!-- RETRO-TV-COMMENT-122 -->
+<!-- RETRO-TV-COMMENT-123 -->
+<!-- RETRO-TV-COMMENT-124 -->
+<!-- RETRO-TV-COMMENT-125 -->
+<!-- RETRO-TV-COMMENT-126 -->
+<!-- RETRO-TV-COMMENT-127 -->
+<!-- RETRO-TV-COMMENT-128 -->
+<!-- RETRO-TV-COMMENT-129 -->
+<!-- RETRO-TV-COMMENT-130 -->
+<!-- RETRO-TV-COMMENT-131 -->
+<!-- RETRO-TV-COMMENT-132 -->
+<!-- RETRO-TV-COMMENT-133 -->
+<!-- RETRO-TV-COMMENT-134 -->
+<!-- RETRO-TV-COMMENT-135 -->
+<!-- RETRO-TV-COMMENT-136 -->
+<!-- RETRO-TV-COMMENT-137 -->
+<!-- RETRO-TV-COMMENT-138 -->
+<!-- RETRO-TV-COMMENT-139 -->
+<!-- RETRO-TV-COMMENT-140 -->
+<!-- RETRO-TV-COMMENT-141 -->
+<!-- RETRO-TV-COMMENT-142 -->
+<!-- RETRO-TV-COMMENT-143 -->
+<!-- RETRO-TV-COMMENT-144 -->
+<!-- RETRO-TV-COMMENT-145 -->
+<!-- RETRO-TV-COMMENT-146 -->
+<!-- RETRO-TV-COMMENT-147 -->
+<!-- RETRO-TV-COMMENT-148 -->
+<!-- RETRO-TV-COMMENT-149 -->
+<!-- RETRO-TV-COMMENT-150 -->
+<!-- RETRO-TV-COMMENT-151 -->
+<!-- RETRO-TV-COMMENT-152 -->
+<!-- RETRO-TV-COMMENT-153 -->
+<!-- RETRO-TV-COMMENT-154 -->
+<!-- RETRO-TV-COMMENT-155 -->
+<!-- RETRO-TV-COMMENT-156 -->
+<!-- RETRO-TV-COMMENT-157 -->
+<!-- RETRO-TV-COMMENT-158 -->
+<!-- RETRO-TV-COMMENT-159 -->
+<!-- RETRO-TV-COMMENT-160 -->
+<!-- RETRO-TV-COMMENT-161 -->
+<!-- RETRO-TV-COMMENT-162 -->
+<!-- RETRO-TV-COMMENT-163 -->
+<!-- RETRO-TV-COMMENT-164 -->
+<!-- RETRO-TV-COMMENT-165 -->
+<!-- RETRO-TV-COMMENT-166 -->
+<!-- RETRO-TV-COMMENT-167 -->
+<!-- RETRO-TV-COMMENT-168 -->
+<!-- RETRO-TV-COMMENT-169 -->
+<!-- RETRO-TV-COMMENT-170 -->
+<!-- RETRO-TV-COMMENT-171 -->
+<!-- RETRO-TV-COMMENT-172 -->
+<!-- RETRO-TV-COMMENT-173 -->
+<!-- RETRO-TV-COMMENT-174 -->
+<!-- RETRO-TV-COMMENT-175 -->
+<!-- RETRO-TV-COMMENT-176 -->
+<!-- RETRO-TV-COMMENT-177 -->
+<!-- RETRO-TV-COMMENT-178 -->
+<!-- RETRO-TV-COMMENT-179 -->
+<!-- RETRO-TV-COMMENT-180 -->
+<!-- RETRO-TV-COMMENT-181 -->
+<!-- RETRO-TV-COMMENT-182 -->
+<!-- RETRO-TV-COMMENT-183 -->
+<!-- RETRO-TV-COMMENT-184 -->
+<!-- RETRO-TV-COMMENT-185 -->
+<!-- RETRO-TV-COMMENT-186 -->
+<!-- RETRO-TV-COMMENT-187 -->
+<!-- RETRO-TV-COMMENT-188 -->
+<!-- RETRO-TV-COMMENT-189 -->
+<!-- RETRO-TV-COMMENT-190 -->
+<!-- RETRO-TV-COMMENT-191 -->
+<!-- RETRO-TV-COMMENT-192 -->
+<!-- RETRO-TV-COMMENT-193 -->
+<!-- RETRO-TV-COMMENT-194 -->
+<!-- RETRO-TV-COMMENT-195 -->
+<!-- RETRO-TV-COMMENT-196 -->
+<!-- RETRO-TV-COMMENT-197 -->
+<!-- RETRO-TV-COMMENT-198 -->
+<!-- RETRO-TV-COMMENT-199 -->
+<!-- RETRO-TV-COMMENT-200 -->
+<!-- RETRO-TV-COMMENT-201 -->
+<!-- RETRO-TV-COMMENT-202 -->
+<!-- RETRO-TV-COMMENT-203 -->
+<!-- RETRO-TV-COMMENT-204 -->
+<!-- RETRO-TV-COMMENT-205 -->
+<!-- RETRO-TV-COMMENT-206 -->
+<!-- RETRO-TV-COMMENT-207 -->
+<!-- RETRO-TV-COMMENT-208 -->
+<!-- RETRO-TV-COMMENT-209 -->
+<!-- RETRO-TV-COMMENT-210 -->
+<!-- RETRO-TV-COMMENT-211 -->
+<!-- RETRO-TV-COMMENT-212 -->
+<!-- RETRO-TV-COMMENT-213 -->
+<!-- RETRO-TV-COMMENT-214 -->
+<!-- RETRO-TV-COMMENT-215 -->
+<!-- RETRO-TV-COMMENT-216 -->
+<!-- RETRO-TV-COMMENT-217 -->
+<!-- RETRO-TV-COMMENT-218 -->
+<!-- RETRO-TV-COMMENT-219 -->
+<!-- RETRO-TV-COMMENT-220 -->
+<!-- RETRO-TV-COMMENT-221 -->
+<!-- RETRO-TV-COMMENT-222 -->
+<!-- RETRO-TV-COMMENT-223 -->
+<!-- RETRO-TV-COMMENT-224 -->
+<!-- RETRO-TV-COMMENT-225 -->
+<!-- RETRO-TV-COMMENT-226 -->
+<!-- RETRO-TV-COMMENT-227 -->
+<!-- RETRO-TV-COMMENT-228 -->
+<!-- RETRO-TV-COMMENT-229 -->
+<!-- RETRO-TV-COMMENT-230 -->
+<!-- RETRO-TV-COMMENT-231 -->
+<!-- RETRO-TV-COMMENT-232 -->
+<!-- RETRO-TV-COMMENT-233 -->
+<!-- RETRO-TV-COMMENT-234 -->
+<!-- RETRO-TV-COMMENT-235 -->
+<!-- RETRO-TV-COMMENT-236 -->
+<!-- RETRO-TV-COMMENT-237 -->
+<!-- RETRO-TV-COMMENT-238 -->
+<!-- RETRO-TV-COMMENT-239 -->
+<!-- RETRO-TV-COMMENT-240 -->
+<!-- RETRO-TV-COMMENT-241 -->
+<!-- RETRO-TV-COMMENT-242 -->
+<!-- RETRO-TV-COMMENT-243 -->
+<!-- RETRO-TV-COMMENT-244 -->
+<!-- RETRO-TV-COMMENT-245 -->
+<!-- RETRO-TV-COMMENT-246 -->
+<!-- RETRO-TV-COMMENT-247 -->
+<!-- RETRO-TV-COMMENT-248 -->
+<!-- RETRO-TV-COMMENT-249 -->
+<!-- RETRO-TV-COMMENT-250 -->
+<!-- RETRO-TV-COMMENT-251 -->
+<!-- RETRO-TV-COMMENT-252 -->
+<!-- RETRO-TV-COMMENT-253 -->
+<!-- RETRO-TV-COMMENT-254 -->
+<!-- RETRO-TV-COMMENT-255 -->
+<!-- RETRO-TV-COMMENT-256 -->
+<!-- RETRO-TV-COMMENT-257 -->
+<!-- RETRO-TV-COMMENT-258 -->
+<!-- RETRO-TV-COMMENT-259 -->
+<!-- RETRO-TV-COMMENT-260 -->
+<!-- RETRO-TV-COMMENT-261 -->
+<!-- RETRO-TV-COMMENT-262 -->
+<!-- RETRO-TV-COMMENT-263 -->
+<!-- RETRO-TV-COMMENT-264 -->
+<!-- RETRO-TV-COMMENT-265 -->
+<!-- RETRO-TV-COMMENT-266 -->
+<!-- RETRO-TV-COMMENT-267 -->
+<!-- RETRO-TV-COMMENT-268 -->
+<!-- RETRO-TV-COMMENT-269 -->
+<!-- RETRO-TV-COMMENT-270 -->
+<!-- RETRO-TV-COMMENT-271 -->
+<!-- RETRO-TV-COMMENT-272 -->
+<!-- RETRO-TV-COMMENT-273 -->
+<!-- RETRO-TV-COMMENT-274 -->
+<!-- RETRO-TV-COMMENT-275 -->
+<!-- RETRO-TV-COMMENT-276 -->
+<!-- RETRO-TV-COMMENT-277 -->
+<!-- RETRO-TV-COMMENT-278 -->
+<!-- RETRO-TV-COMMENT-279 -->
+<!-- RETRO-TV-COMMENT-280 -->
+<!-- RETRO-TV-COMMENT-281 -->
+<!-- RETRO-TV-COMMENT-282 -->
+<!-- RETRO-TV-COMMENT-283 -->
+<!-- RETRO-TV-COMMENT-284 -->
+<!-- RETRO-TV-COMMENT-285 -->
+<!-- RETRO-TV-COMMENT-286 -->
+<!-- RETRO-TV-COMMENT-287 -->
+<!-- RETRO-TV-COMMENT-288 -->
+<!-- RETRO-TV-COMMENT-289 -->
+<!-- RETRO-TV-COMMENT-290 -->
+<!-- RETRO-TV-COMMENT-291 -->
+<!-- RETRO-TV-COMMENT-292 -->
+<!-- RETRO-TV-COMMENT-293 -->
+<!-- RETRO-TV-COMMENT-294 -->
+<!-- RETRO-TV-COMMENT-295 -->
+<!-- RETRO-TV-COMMENT-296 -->
+<!-- RETRO-TV-COMMENT-297 -->
+<!-- RETRO-TV-COMMENT-298 -->
+<!-- RETRO-TV-COMMENT-299 -->
+<!-- RETRO-TV-COMMENT-300 -->
+<!-- RETRO-TV-COMMENT-301 -->
+<!-- RETRO-TV-COMMENT-302 -->
+<!-- RETRO-TV-COMMENT-303 -->
+<!-- RETRO-TV-COMMENT-304 -->
+<!-- RETRO-TV-COMMENT-305 -->
+<!-- RETRO-TV-COMMENT-306 -->
+<!-- RETRO-TV-COMMENT-307 -->
+<!-- RETRO-TV-COMMENT-308 -->
+<!-- RETRO-TV-COMMENT-309 -->
+<!-- RETRO-TV-COMMENT-310 -->
+<!-- RETRO-TV-COMMENT-311 -->
+<!-- RETRO-TV-COMMENT-312 -->
+<!-- RETRO-TV-COMMENT-313 -->
+<!-- RETRO-TV-COMMENT-314 -->
+<!-- RETRO-TV-COMMENT-315 -->
+<!-- RETRO-TV-COMMENT-316 -->
+<!-- RETRO-TV-COMMENT-317 -->
+<!-- RETRO-TV-COMMENT-318 -->
+<!-- RETRO-TV-COMMENT-319 -->
+<!-- RETRO-TV-COMMENT-320 -->
+<!-- RETRO-TV-COMMENT-321 -->
+<!-- RETRO-TV-COMMENT-322 -->
+<!-- RETRO-TV-COMMENT-323 -->
+<!-- RETRO-TV-COMMENT-324 -->
+<!-- RETRO-TV-COMMENT-325 -->
+<!-- RETRO-TV-COMMENT-326 -->
+<!-- RETRO-TV-COMMENT-327 -->
+<!-- RETRO-TV-COMMENT-328 -->
+<!-- RETRO-TV-COMMENT-329 -->
+<!-- RETRO-TV-COMMENT-330 -->
+<!-- RETRO-TV-COMMENT-331 -->
+<!-- RETRO-TV-COMMENT-332 -->
+<!-- RETRO-TV-COMMENT-333 -->
+<!-- RETRO-TV-COMMENT-334 -->
+<!-- RETRO-TV-COMMENT-335 -->
+<!-- RETRO-TV-COMMENT-336 -->
+<!-- RETRO-TV-COMMENT-337 -->
+<!-- RETRO-TV-COMMENT-338 -->
+<!-- RETRO-TV-COMMENT-339 -->
+<!-- RETRO-TV-COMMENT-340 -->
+<!-- RETRO-TV-COMMENT-341 -->
+<!-- RETRO-TV-COMMENT-342 -->
+<!-- RETRO-TV-COMMENT-343 -->
+<!-- RETRO-TV-COMMENT-344 -->
+<!-- RETRO-TV-COMMENT-345 -->
+<!-- RETRO-TV-COMMENT-346 -->
+<!-- RETRO-TV-COMMENT-347 -->
+<!-- RETRO-TV-COMMENT-348 -->
+<!-- RETRO-TV-COMMENT-349 -->
+<!-- RETRO-TV-COMMENT-350 -->
+<!-- RETRO-TV-COMMENT-351 -->
+<!-- RETRO-TV-COMMENT-352 -->
+<!-- RETRO-TV-COMMENT-353 -->
+<!-- RETRO-TV-COMMENT-354 -->
+<!-- RETRO-TV-COMMENT-355 -->
+<!-- RETRO-TV-COMMENT-356 -->
+<!-- RETRO-TV-COMMENT-357 -->
+<!-- RETRO-TV-COMMENT-358 -->
+<!-- RETRO-TV-COMMENT-359 -->
+<!-- RETRO-TV-COMMENT-360 -->
+<!-- RETRO-TV-COMMENT-361 -->
+<!-- RETRO-TV-COMMENT-362 -->
+<!-- RETRO-TV-COMMENT-363 -->
+<!-- RETRO-TV-COMMENT-364 -->
+<!-- RETRO-TV-COMMENT-365 -->
+<!-- RETRO-TV-COMMENT-366 -->
+<!-- RETRO-TV-COMMENT-367 -->
+<!-- RETRO-TV-COMMENT-368 -->
+<!-- RETRO-TV-COMMENT-369 -->
+<!-- RETRO-TV-COMMENT-370 -->
+<!-- RETRO-TV-COMMENT-371 -->
+<!-- RETRO-TV-COMMENT-372 -->
+<!-- RETRO-TV-COMMENT-373 -->
+<!-- RETRO-TV-COMMENT-374 -->
+<!-- RETRO-TV-COMMENT-375 -->
+<!-- RETRO-TV-COMMENT-376 -->
+<!-- RETRO-TV-COMMENT-377 -->
+<!-- RETRO-TV-COMMENT-378 -->
+<!-- RETRO-TV-COMMENT-379 -->
+<!-- RETRO-TV-COMMENT-380 -->
+<!-- RETRO-TV-COMMENT-381 -->
+<!-- RETRO-TV-COMMENT-382 -->
+<!-- RETRO-TV-COMMENT-383 -->
+<!-- RETRO-TV-COMMENT-384 -->
+<!-- RETRO-TV-COMMENT-385 -->
+<!-- RETRO-TV-COMMENT-386 -->
+<!-- RETRO-TV-COMMENT-387 -->
+<!-- RETRO-TV-COMMENT-388 -->
+<!-- RETRO-TV-COMMENT-389 -->
+<!-- RETRO-TV-COMMENT-390 -->
+<!-- RETRO-TV-COMMENT-391 -->
+<!-- RETRO-TV-COMMENT-392 -->
+<!-- RETRO-TV-COMMENT-393 -->
+<!-- RETRO-TV-COMMENT-394 -->
+<!-- RETRO-TV-COMMENT-395 -->
+<!-- RETRO-TV-COMMENT-396 -->
+<!-- RETRO-TV-COMMENT-397 -->
+<!-- RETRO-TV-COMMENT-398 -->
+<!-- RETRO-TV-COMMENT-399 -->
+<!-- RETRO-TV-COMMENT-400 -->
+<!-- RETRO-TV-COMMENT-401 -->
+<!-- RETRO-TV-COMMENT-402 -->
+<!-- RETRO-TV-COMMENT-403 -->
+<!-- RETRO-TV-COMMENT-404 -->
+<!-- RETRO-TV-COMMENT-405 -->
+<!-- RETRO-TV-COMMENT-406 -->
+<!-- RETRO-TV-COMMENT-407 -->
+<!-- RETRO-TV-COMMENT-408 -->
+<!-- RETRO-TV-COMMENT-409 -->
+<!-- RETRO-TV-COMMENT-410 -->
+<!-- RETRO-TV-COMMENT-411 -->
+<!-- RETRO-TV-COMMENT-412 -->
+<!-- RETRO-TV-COMMENT-413 -->
+<!-- RETRO-TV-COMMENT-414 -->
+<!-- RETRO-TV-COMMENT-415 -->
+<!-- RETRO-TV-COMMENT-416 -->
+<!-- RETRO-TV-COMMENT-417 -->
+<!-- RETRO-TV-COMMENT-418 -->
+<!-- RETRO-TV-COMMENT-419 -->
+<!-- RETRO-TV-COMMENT-420 -->
+<!-- RETRO-TV-COMMENT-421 -->
+<!-- RETRO-TV-COMMENT-422 -->
+<!-- RETRO-TV-COMMENT-423 -->
+<!-- RETRO-TV-COMMENT-424 -->
+<!-- RETRO-TV-COMMENT-425 -->
+<!-- RETRO-TV-COMMENT-426 -->
+<!-- RETRO-TV-COMMENT-427 -->
+<!-- RETRO-TV-COMMENT-428 -->
+<!-- RETRO-TV-COMMENT-429 -->
+<!-- RETRO-TV-COMMENT-430 -->
+<!-- RETRO-TV-COMMENT-431 -->
+<!-- RETRO-TV-COMMENT-432 -->
+<!-- RETRO-TV-COMMENT-433 -->
+<!-- RETRO-TV-COMMENT-434 -->
+<!-- RETRO-TV-COMMENT-435 -->
+<!-- RETRO-TV-COMMENT-436 -->
+<!-- RETRO-TV-COMMENT-437 -->
+<!-- RETRO-TV-COMMENT-438 -->
+<!-- RETRO-TV-COMMENT-439 -->
+<!-- RETRO-TV-COMMENT-440 -->
+<!-- RETRO-TV-COMMENT-441 -->
+<!-- RETRO-TV-COMMENT-442 -->
+<!-- RETRO-TV-COMMENT-443 -->
+<!-- RETRO-TV-COMMENT-444 -->
+<!-- RETRO-TV-COMMENT-445 -->
+<!-- RETRO-TV-COMMENT-446 -->
+<!-- RETRO-TV-COMMENT-447 -->
+<!-- RETRO-TV-COMMENT-448 -->
+<!-- RETRO-TV-COMMENT-449 -->
+<!-- RETRO-TV-COMMENT-450 -->
+<!-- RETRO-TV-COMMENT-451 -->
+<!-- RETRO-TV-COMMENT-452 -->
+<!-- RETRO-TV-COMMENT-453 -->
+<!-- RETRO-TV-COMMENT-454 -->
+<!-- RETRO-TV-COMMENT-455 -->
+<!-- RETRO-TV-COMMENT-456 -->
+<!-- RETRO-TV-COMMENT-457 -->
+<!-- RETRO-TV-COMMENT-458 -->
+<!-- RETRO-TV-COMMENT-459 -->
+<!-- RETRO-TV-COMMENT-460 -->
+<!-- RETRO-TV-COMMENT-461 -->
+<!-- RETRO-TV-COMMENT-462 -->
+<!-- RETRO-TV-COMMENT-463 -->
+<!-- RETRO-TV-COMMENT-464 -->
+<!-- RETRO-TV-COMMENT-465 -->
+<!-- RETRO-TV-COMMENT-466 -->
+<!-- RETRO-TV-COMMENT-467 -->
+<!-- RETRO-TV-COMMENT-468 -->
+<!-- RETRO-TV-COMMENT-469 -->
+<!-- RETRO-TV-COMMENT-470 -->
+<!-- RETRO-TV-COMMENT-471 -->
+<!-- RETRO-TV-COMMENT-472 -->
+<!-- RETRO-TV-COMMENT-473 -->
+<!-- RETRO-TV-COMMENT-474 -->
+<!-- RETRO-TV-COMMENT-475 -->
+<!-- RETRO-TV-COMMENT-476 -->
+<!-- RETRO-TV-COMMENT-477 -->
+<!-- RETRO-TV-COMMENT-478 -->
+<!-- RETRO-TV-COMMENT-479 -->
+<!-- RETRO-TV-COMMENT-480 -->
+<!-- RETRO-TV-COMMENT-481 -->
+<!-- RETRO-TV-COMMENT-482 -->
+<!-- RETRO-TV-COMMENT-483 -->
+<!-- RETRO-TV-COMMENT-484 -->
+<!-- RETRO-TV-COMMENT-485 -->
+<!-- RETRO-TV-COMMENT-486 -->
+<!-- RETRO-TV-COMMENT-487 -->
+<!-- RETRO-TV-COMMENT-488 -->
+<!-- RETRO-TV-COMMENT-489 -->
+<!-- RETRO-TV-COMMENT-490 -->
+<!-- RETRO-TV-COMMENT-491 -->
+<!-- RETRO-TV-COMMENT-492 -->
+<!-- RETRO-TV-COMMENT-493 -->
+<!-- RETRO-TV-COMMENT-494 -->
+<!-- RETRO-TV-COMMENT-495 -->
+<!-- RETRO-TV-COMMENT-496 -->
+<!-- RETRO-TV-COMMENT-497 -->
+<!-- RETRO-TV-COMMENT-498 -->
+<!-- RETRO-TV-COMMENT-499 -->
+<!-- RETRO-TV-COMMENT-500 -->
+<!-- RETRO-TV-COMMENT-501 -->
+<!-- RETRO-TV-COMMENT-502 -->
+<!-- RETRO-TV-COMMENT-503 -->
+<!-- RETRO-TV-COMMENT-504 -->
+<!-- RETRO-TV-COMMENT-505 -->
+<!-- RETRO-TV-COMMENT-506 -->
+<!-- RETRO-TV-COMMENT-507 -->
+<!-- RETRO-TV-COMMENT-508 -->
+<!-- RETRO-TV-COMMENT-509 -->
+<!-- RETRO-TV-COMMENT-510 -->
+<!-- RETRO-TV-COMMENT-511 -->
+<!-- RETRO-TV-COMMENT-512 -->
+<!-- RETRO-TV-COMMENT-513 -->
+<!-- RETRO-TV-COMMENT-514 -->
+<!-- RETRO-TV-COMMENT-515 -->
+<!-- RETRO-TV-COMMENT-516 -->
+<!-- RETRO-TV-COMMENT-517 -->
+<!-- RETRO-TV-COMMENT-518 -->
+<!-- RETRO-TV-COMMENT-519 -->
+<!-- RETRO-TV-COMMENT-520 -->
+<!-- RETRO-TV-COMMENT-521 -->
+<!-- RETRO-TV-COMMENT-522 -->
+<!-- RETRO-TV-COMMENT-523 -->
+<!-- RETRO-TV-COMMENT-524 -->
+<!-- RETRO-TV-COMMENT-525 -->
+<!-- RETRO-TV-COMMENT-526 -->
+<!-- RETRO-TV-COMMENT-527 -->
+<!-- RETRO-TV-COMMENT-528 -->
+<!-- RETRO-TV-COMMENT-529 -->
+<!-- RETRO-TV-COMMENT-530 -->
+<!-- RETRO-TV-COMMENT-531 -->
+<!-- RETRO-TV-COMMENT-532 -->
+<!-- RETRO-TV-COMMENT-533 -->
+<!-- RETRO-TV-COMMENT-534 -->
+<!-- RETRO-TV-COMMENT-535 -->
+<!-- RETRO-TV-COMMENT-536 -->
+<!-- RETRO-TV-COMMENT-537 -->
+<!-- RETRO-TV-COMMENT-538 -->
+<!-- RETRO-TV-COMMENT-539 -->
+<!-- RETRO-TV-COMMENT-540 -->
+<!-- RETRO-TV-COMMENT-541 -->
+<!-- RETRO-TV-COMMENT-542 -->
+<!-- RETRO-TV-COMMENT-543 -->
+<!-- RETRO-TV-COMMENT-544 -->
+<!-- RETRO-TV-COMMENT-545 -->
+<!-- RETRO-TV-COMMENT-546 -->
+<!-- RETRO-TV-COMMENT-547 -->
+<!-- RETRO-TV-COMMENT-548 -->
+<!-- RETRO-TV-COMMENT-549 -->
